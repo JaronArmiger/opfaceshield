@@ -10,16 +10,5 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
-=begin
-
-    data = access_token.info
-  	user = User.where(email: data['email']).first
-  	unless user
-  	  user = User.create(email: data['email'],
-  	  					         password: Devise.friendly_token[0,20],
-                         provider: access_token.provider,
-                         uid: access_token.uid)
-  	end
-=end
   end
 end
