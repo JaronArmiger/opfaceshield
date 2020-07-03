@@ -3,6 +3,11 @@
   <%= render 'layouts/head' %>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <% if !flash.empty? do |msg_type, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-#{msg_type}")
+      <% end %>
+      <%= yield %>  
+    </div>
   </body>
 </html>
