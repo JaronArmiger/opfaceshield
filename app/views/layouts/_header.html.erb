@@ -17,6 +17,10 @@
         <li class="nav-item">
          <%= link_to 'Log in', new_user_session_path, class: "nav-link" %>
         </li>
+        <%= link_to user_google_oauth2_omniauth_authorize_path, class: "nav-link" do %>
+          <span><%= render 'shared/google_logo' %> Sign in with Google</span>
+        <% end %>
+        </li>
         <li class="nav-item">
          <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
         </li>
