@@ -4,8 +4,10 @@
 
   <body>
     <div class="container">
-      <% if !flash.empty? do |msg_type, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-#{msg_type}")
+      <% if !flash.empty? %>
+        <% flash.each do |msg_type, msg| %>
+          <%= content_tag(:div, msg, class: "alert alert-#{msg_type}") %>
+        <% end %>
       <% end %>
       <%= yield %>  
     </div>
