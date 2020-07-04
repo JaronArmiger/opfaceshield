@@ -5,3 +5,11 @@ user = User.new(email: "test@test.com",
 			 admin: true)
 user.confirm
 user.save!
+
+Institution.create(name: "Medical")
+Institution.create(name: "Essential Services")
+Institution.create(name: "Physical Therapy/Occupational Therapy")
+Institution.create(name: "Assisted Living and Memory Care")
+Institution.create(name: "Community Mental Health")
+Institution.create(name: "Other")
+
