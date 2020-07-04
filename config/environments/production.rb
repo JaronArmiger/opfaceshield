@@ -67,6 +67,17 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
+
+  ActionMailer::Base.smtp_settings = {
+    :user_name => 'apikey',
+    :api_key => ENV["SENDGRID_API_KEY"],
+    :domain => 'https://fierce-beyond-46550.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 465,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+=begin
   config.action_mailer.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
@@ -76,6 +87,7 @@ Rails.application.configure do
     :authentication => :plain,
     :enable_starttls_auto => true
   }
+=end
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
