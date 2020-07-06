@@ -5,7 +5,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.string :institution_type
       t.string :contact_first_name
       t.string :contact_last_name
-      t.integer :phone_number
+      t.bigint :phone_number
 
       t.timestamps
     end

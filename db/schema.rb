@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_222832) do
+ActiveRecord::Schema.define(version: 2020_07_04_225228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_222832) do
     t.string "institution_type"
     t.string "contact_first_name"
     t.string "contact_last_name"
-    t.integer "phone_number"
+    t.bigint "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
@@ -38,12 +38,22 @@ ActiveRecord::Schema.define(version: 2020_07_04_222832) do
     t.index ["account_id"], name: "index_addresses_on_account_id"
   end
 
+  create_table "addresses_orders", id: false, force: :cascade do |t|
+    t.bigint "address_id"
+    t.bigint "order_id"
+    t.index ["address_id"], name: "index_addresses_orders_on_address_id"
+    t.index ["order_id"], name: "index_addresses_orders_on_order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer "num_shields"
     t.integer "num_adjusters"
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "account_id", null: false
+    t.boolean "processed", default: false
+    t.index ["account_id"], name: "index_orders_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,4 +77,5 @@ ActiveRecord::Schema.define(version: 2020_07_04_222832) do
 
   add_foreign_key "accounts", "users"
   add_foreign_key "addresses", "accounts"
+  add_foreign_key "orders", "accounts"
 end

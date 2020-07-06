@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  num_shields: 1
-  num_adjusters: 1
-  message: MyText
+  num_shields: 100
+  num_adjusters: 200
+  message: muchas gracias por el equipo
+  account: one
+  processed: false
 
-two:
-  num_shields: 1
-  num_adjusters: 1
-  message: MyText
