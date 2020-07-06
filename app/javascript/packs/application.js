@@ -10,6 +10,7 @@ require("channels")
 
 import './bootstrap_custom.js'
 import '../stylesheets/application'
+import '../scripts/accounts_form.js'
 
 
 
