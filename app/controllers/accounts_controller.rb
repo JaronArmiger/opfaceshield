@@ -11,19 +11,35 @@ class AccountsController < ApplicationController
 	end
 
 	def create
-	  account_attributes = filter_params(account_params)
+	  account_attributes = filter_params(account_new_params)
 	  @account = current_user.build_account(account_attributes)
 	  if @account.save
-	  	flash[:success] = "Account information saved!"
+	  	flash[:success] = "Account info saved!"
 	  	redirect_to account_path(@account)
 	  else
 	  	render :new
 	  end
 	end
 
+	def edit
+		@account = Account.find(params[:id])
+	end
+
+	def update
+		account_attributes = filter_params(account_edit_params)
+		@account = Account.find(params[:id])
+		@account.update_attributes(account_attributes)
+		if @account.save
+			flash[:success] = "Account info updated!"
+			redirect_to account_path(@account)
+		else
+			render :edit
+		end
+	end
+
 	private
 
-	  def account_params
+	  def account_new_params
 	  	params.require(:account).permit(:institution_name,
 	  									:institution_type,
 	  									:contact_first_name,
@@ -33,6 +49,15 @@ class AccountsController < ApplicationController
 	  									addresses_attributes: 
 	  									[:street_address, :city,
 	  									 :state, :zipcode])
+	  end
+
+	  def account_edit_params
+	  	params.require(:account).permit(:institution_name,
+	  									:institution_type,
+	  									:contact_first_name,
+	  									:contact_last_name,
+	  									:phone_number,
+	  									:other_type)
 	  end
 
 	  def filter_params(params_hash)
