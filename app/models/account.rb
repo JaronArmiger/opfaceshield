@@ -12,4 +12,6 @@ class Account < ApplicationRecord
 	validates :institution_type, presence: true
 	validates :contact_first_name, presence: true
 	validates :contact_last_name, presence: true
+
+	accepts_nested_attributes_for :addresses
 end

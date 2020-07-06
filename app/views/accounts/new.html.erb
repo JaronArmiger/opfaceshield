@@ -1,0 +1,13 @@
+<h1>account form</h1>
+
+<%= form_with(model: @account, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <br>
+  <%= f.label :institution_name %>
+  <%= f.text_field :institution_name %>
+  <br>
+  <%= f.label :institution_type %>
+  <%= f.select :institution_type, options_for_select(institution_types) %>
+  <br>
+  <%= f.submit %>
+<% end %>
