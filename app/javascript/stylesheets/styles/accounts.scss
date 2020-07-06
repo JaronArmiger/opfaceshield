@@ -13,10 +13,19 @@
 	flex-basis: 90%;
 }
 
-.buttons {
-
+.buttons i {
+  color: var(--dark);
 }
 
-#new-address-btn {
+.account-info .no-bold {
 	font-weight: 400;
+}
+
+.suggestion {
+	font-size: .7rem;
+}
+
+#add-address {
+	margin-top: 1rem;
+	margin-left: .5rem;
 }

@@ -1,0 +1,119 @@
+$dat-grey: rgba(0,0,0,0.7);
+$border: 2px solid $dat-grey;
+
+.alert-alert {
+	background-color: rgba(255, 225, 0, 0.8);
+	color: #7a7128;
+}
+
+.dummy {
+	height: 4rem;
+}
+
+.google {
+	display: flex;
+}
+
+.google-svg {
+	margin-right: .5rem;
+}
+
+input[type="submit"] {
+	border: $border;
+	background-color: rgba(110, 52, 235,0.5);
+	width: 100%;
+	font-size: 1.2rem;
+	padding: .5rem 1.5rem;
+	border-radius: .7rem;
+}
+
+// devise forms
+.devise-header {
+	width: 100%;
+	text-align: center;
+}
+
+.devise-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.devise-form label {
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+
+.devise-form .field {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.2rem;
+}
+
+.devise-form .actions {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+}
+
+.field input {
+	padding: .5rem 1.5rem;
+	font-size: 1.2rem;
+	border: $border;
+	border-radius: .7rem;
+	&:focus {
+		outline: none;
+		background-color: rgba(0,0,0,0);
+	}
+}
+
+.cancel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.links {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1rem;
+}
+
+.links a {
+	margin-top: .5rem;
+}
+
+#remember-me {
+  flex-direction: row;
+  align-items: center;
+}
+
+#remember-me > * {
+	margin-right: 1rem;
+}
+
+
+#remember-me input {
+
+}
+
+#error_explanation {
+	text-align:center;
+}
+
+#error_explanation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+#error_explanation h2 {
+	font-size: 1.1rem;
+}

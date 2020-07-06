@@ -5,6 +5,7 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <div class="dummy"></div>
       <% if !flash.empty? %>
         <% flash.each do |msg_type, msg| %>
           <%= content_tag(:div, msg, class: "alert alert-#{msg_type}") %>

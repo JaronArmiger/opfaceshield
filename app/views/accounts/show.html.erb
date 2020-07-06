@@ -7,6 +7,7 @@
 			  <h2>Login</h2>
 			  <span>Email:</span>
 			  <%= @account.user.email %>
+			  <span class="no-bold suggestion">(click pencil icon to change password)</span>
 			</div>
 			<div class="buttons">
 			  <%= link_to edit_user_registration_path(current_user) do %>
@@ -56,10 +57,10 @@
 				    </div>
 				  </li>
 				<% end %>
-				<div class="buttons">
+				<div class="buttons" id="add-address">
 				  <%= link_to new_address_path do %>
 			        <i class="glyphicon glyphicon-plus"></i>
-			        <span id="new-address-btn"> Add A New Address</span>
+			        <span class="no-bold"> Add A New Address</span>
 			      <% end %>
 			    </div>
 			</ul>

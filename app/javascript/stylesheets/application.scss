@@ -1,3 +1,8 @@
 @import './bootstrap_custom.scss';
+// shared
+@import './shared/general';
+@import './shared/header';
+//  styles
 @import './styles/accounts_form';
 @import './styles/accounts';
+
