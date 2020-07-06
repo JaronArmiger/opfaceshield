@@ -1,5 +1,10 @@
 class AccountsController < ApplicationController
 	include AccountsHelper
+	
+	def show
+		@account = Account.find(params[:id])
+	end
+
 	def new
 	  @account = Account.new
 	  @account.addresses.build
@@ -7,8 +12,13 @@ class AccountsController < ApplicationController
 
 	def create
 	  account_attributes = filter_params(account_params)
-	  @account = current_user.accounts.build(account_attributes)
-	  
+	  @account = current_user.build_account(account_attributes)
+	  if @account.save
+	  	flash[:success] = "Account information saved!"
+	  	redirect_to account_path(@account)
+	  else
+	  	render :new
+	  end
 	end
 
 	private

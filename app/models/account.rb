@@ -1,8 +1,8 @@
 class Account < ApplicationRecord
 	# associations
 	belongs_to :user
-	has_many :addresses
-	has_many :orders
+	has_many :addresses, dependent: :destroy
+	has_many :orders, dependent: :destroy
 
 	accepts_nested_attributes_for :addresses
 

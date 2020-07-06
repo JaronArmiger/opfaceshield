@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	include ApplicationHelper
 	protect_from_forgery with: :exception
 	before_action :authenticate_user!
 	before_action :store_user_location!, if: :storable_location?

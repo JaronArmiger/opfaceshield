@@ -1,1 +1,1 @@
-<%= link_to "Complete account set up", new_account_path %>
+<%= link_to "Complete account set up", new_account_path if !current_user.account%>
