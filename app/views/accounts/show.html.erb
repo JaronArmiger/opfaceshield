@@ -1,49 +1,67 @@
 
 <div class="card account-info">
 	<h1 class="card-header">Account Information</h1>
-	<span class="glyphicon glyphicon-pencil"></span>
 	<ul class="list-group">
-		<li class="list-group-item">
-			<h2>Login</h2>
-			<span>Email:</span>
-			<%= @account.user.email %>
-			<br>
+		<li class="list-group-item info-group">
+			<div class="info">
+			  <h2>Login</h2>
+			  <span>Email:</span>
+			  <%= @account.user.email %>
+			</div>
+			<div class="buttons">
+			  <%= link_to edit_user_registration_path(current_user) do %>
+			    <i class="glyphicon glyphicon-pencil"></i>
+			  <% end %>
+			</div>
 		</li>
-		<li class="list-group-item">
-			<h2>Institution</h2>
-			<span>Name:</span>
-			<%= @account.institution_name %>
-			<br>
-			<span>Type:</span>
-			<%= @account.institution_type %>
-		</li>
-		<li class="list-group-item">
-			<h2>Contact</h2>
-			<span>Name:</span>
-			<%= @account.contact_first_name %>
-			<%= @account.contact_last_name %>
-			<br>
-			<span>Phone:</span>
-			<%= @account.phone_number %>
+		<li class="list-group-item info-group">
+			<div class="info">
+				<h2>Institution</h2>
+				<span>Name:</span>
+				<%= @account.institution_name %>
+				<span>Type:</span>
+				<%= @account.institution_type %>
+				<h2>Contact</h2>
+			    <span>Name:</span>
+			    <%= @account.contact_first_name %>
+			    <%= @account.contact_last_name %>
+			    <span>Phone:</span>
+			    <%= @account.phone_number %>
+			</div>
+			<div class="buttons">
+			  <%= link_to edit_account_path(@account) do %>
+			    <i class="glyphicon glyphicon-pencil"></i>
+			  <% end %>
+			</div>
 		</li>
 		<li class="list-group-item">
 			<h2><%= pluralize_address(@account.addresses.count, "Address") %></h2>
 			<ul class="list-group">
 				<% @account.addresses.each do |address| %>
-				  <li class="list-group-item">
-				  	<span>Street Address:</span>
-				    <%= address.street_address %>
-				    <br>
-				    <span>City:</span>
-				    <%= address.city %>
-				    <br>
-				    <span>State:</span>
-				    <%= address.state %>
-				    <br>
-				    <span>Zip Code:</span>
-				    <%= address.zipcode %>	
+				  <li class="list-group-item info-group">
+				  	<div class="info">
+				  	  <span>Street Address:</span>
+				      <%= address.street_address %>
+				      <span>City:</span>
+				      <%= address.city %>
+				      <span>State:</span>
+				      <%= address.state %>
+				      <span>Zip Code:</span>
+				      <%= address.zipcode %>
+				    </div>
+				    <div class="buttons">
+					  <%= link_to edit_address_path(address) do %>
+				        <i class="glyphicon glyphicon-pencil"></i>
+				      <% end %>
+				    </div>
 				  </li>
 				<% end %>
+				<div class="buttons">
+				  <%= link_to new_address_path do %>
+			        <i class="glyphicon glyphicon-plus"></i>
+			        <span id="new-address-btn"> Add A New Address</span>
+			      <% end %>
+			    </div>
 			</ul>
 		</li>
 	</ul>

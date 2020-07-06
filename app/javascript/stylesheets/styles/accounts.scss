@@ -1,3 +1,22 @@
 .account-info span {
 	font-weight: 700;
 }
+
+.info-group {
+	display: flex;
+	justify-content: space-between;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 90%;
+}
+
+.buttons {
+
+}
+
+#new-address-btn {
+	font-weight: 400;
+}
