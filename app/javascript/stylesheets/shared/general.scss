@@ -1,9 +1,17 @@
 $dat-grey: rgba(0,0,0,0.7);
 $border: 2px solid $dat-grey;
+$border-radius: .7rem;
 
 .alert-alert {
 	background-color: rgba(255, 225, 0, 0.8);
 	color: #7a7128;
+}
+
+#error_explanation {
+	background-color: rgba(196, 10, 10, 0.4);
+	border-radius: $border-radius;
+	padding: .7rem;
+	color: #7a0a17;
 }
 
 .dummy {
@@ -24,7 +32,7 @@ input[type="submit"] {
 	width: 100%;
 	font-size: 1.2rem;
 	padding: .5rem 1.5rem;
-	border-radius: .7rem;
+	border-radius: $border-radius;
 }
 
 // devise forms
@@ -63,7 +71,7 @@ input[type="submit"] {
 	padding: .5rem 1.5rem;
 	font-size: 1.2rem;
 	border: $border;
-	border-radius: .7rem;
+	border-radius: $border-radius;
 	&:focus {
 		outline: none;
 		background-color: rgba(0,0,0,0);

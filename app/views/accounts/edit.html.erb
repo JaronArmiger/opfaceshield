@@ -2,6 +2,7 @@
 
 <%= form_with(model: @account, local: true, class: "account-edit-form") do |f| %>
   <span style="display: none" id="institution_type"><%= @account.institution_type %></span>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="institution">
   	  <h2>Institution</h2>
 	  <div class="form-group">
@@ -31,5 +32,5 @@
 	  </div>
   </div>
   
-  <%= f.submit "Save", class: "btn btn-secondary" %>
+  <%= f.submit "Update Account", class: "btn btn-secondary" %>
 <% end %>
