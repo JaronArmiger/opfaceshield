@@ -1,4 +1,11 @@
 <%= form_with(model: @order, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  
+  <div class="form-group">
+  	<%= f.label :num_shields, "Number of Face Shields" %>
+  	<%= f.number_field :num_shields, class: "form-control" %>
+  	<%= f.label :num_adjusters, "Number of Face Shields" %>
+  	<%= f.number_field :num_adjusters, class: "form-control" %>
+  	<%= f.label :message, "Briefly describe the purpose/mission of your organization. Why are you requesting this equipment? (limit 140 characters)" %>
+  	<%= f.text_area :message, class: "form-control" %>
+  </div>
 <% end %>

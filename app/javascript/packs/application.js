@@ -12,6 +12,7 @@ require("material-design-icons-iconfont")
 import './bootstrap_custom.js'
 import '../stylesheets/application'
 import '../scripts/accounts_form.js'
+import '../scripts/orders_form.js'
 
 
 
