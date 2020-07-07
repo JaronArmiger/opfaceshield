@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("webpack-icons-installer/bootstrap")
+//require("webpack-icons-installer/bootstrap")
 
 import './bootstrap_custom.js'
 import '../stylesheets/application'
