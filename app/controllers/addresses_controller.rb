@@ -1,9 +1,16 @@
 class AddressesController < ApplicationController
 	def new
-
+		@address = Address.new
 	end
 
 	def create
+		@address = current_user_account.addresses.build(address_params)
+		if @address.save
+		  flash[:success] = "New address added!"
+		  redirect_to account_path(current_user_account)
+		else
+		  render :new
+		end
 	end
 
 	def edit
