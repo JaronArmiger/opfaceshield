@@ -1,4 +1,4 @@
-
+/*
 $(document).ready( function() {
   alert('Page is loaded');
   const otherDiv = $("#other-div");
@@ -19,3 +19,4 @@ $(document).ready( function() {
   	otherType.val(institutionType.text());
   }
 });
+*/
