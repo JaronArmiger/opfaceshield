@@ -1,6 +1,7 @@
 
 $(document).ready( function() {
   const otherDiv = $("#other-div");
+  console.log("accounts_form");
   $("#account_institution_type").change( function() {
   	const selected = $(this).val();
   	if (selected === "Other") {
