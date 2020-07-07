@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_225228) do
+ActiveRecord::Schema.define(version: 2020_07_07_163534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,13 +38,6 @@ ActiveRecord::Schema.define(version: 2020_07_04_225228) do
     t.index ["account_id"], name: "index_addresses_on_account_id"
   end
 
-  create_table "addresses_orders", id: false, force: :cascade do |t|
-    t.bigint "address_id"
-    t.bigint "order_id"
-    t.index ["address_id"], name: "index_addresses_orders_on_address_id"
-    t.index ["order_id"], name: "index_addresses_orders_on_order_id"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer "num_shields"
     t.integer "num_adjusters"
@@ -53,6 +46,10 @@ ActiveRecord::Schema.define(version: 2020_07_04_225228) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "account_id", null: false
     t.boolean "processed", default: false
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.integer "zipcode"
     t.index ["account_id"], name: "index_orders_on_account_id"
   end
 
