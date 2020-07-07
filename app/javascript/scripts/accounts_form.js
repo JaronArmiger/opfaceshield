@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  alert('Page is loaded');
   const otherDiv = $("#other-div");
-  console.log("accounts_form");
   $("#account_institution_type").change( function() {
   	const selected = $(this).val();
   	if (selected === "Other") {
