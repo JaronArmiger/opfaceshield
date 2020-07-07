@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :accounts
   resources :addresses, except: [:index, :show]
+  resources :orders
 end

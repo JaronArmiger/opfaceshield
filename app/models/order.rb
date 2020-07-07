@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
 	# associations
 	belongs_to :account
-	has_and_belongs_to_many :addresses
 
 	#validations
 	validates :num_shields, presence: true,

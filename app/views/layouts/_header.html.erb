@@ -10,7 +10,7 @@
         <%= link_to 'Home', root_path, class: "nav-link" %>
       </li>
       <% if user_signed_in? %>
-         <% if current_user.account %>
+         <% if current_user_account %>
            <li class="nav-item">
              <%= link_to "My Account", account_path(current_user_account), class: "nav-link" %>
            </li>

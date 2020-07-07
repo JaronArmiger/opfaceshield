@@ -1,6 +1,8 @@
 class AccountsController < ApplicationController
 	include AccountsHelper
 	
+	before_action :has_account?, only: [:new]
+
 	def show
 		@account = Account.find(params[:id])
 	end
@@ -15,7 +17,7 @@ class AccountsController < ApplicationController
 	  @account = current_user.build_account(account_attributes)
 	  if @account.save
 	  	flash[:success] = "Account info saved!"
-	  	redirect_to account_path(@account)
+		redirect_back_or(account_path(@account))
 	  else
 	  	render :new
 	  end
@@ -66,5 +68,9 @@ class AccountsController < ApplicationController
 	    end
 	    params_hash.delete(:other_type)
 	    params_hash
+	  end
+
+	  def has_account?
+	  	redirect_to root_path if current_user_account
 	  end
 end
