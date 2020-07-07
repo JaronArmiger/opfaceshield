@@ -11,7 +11,7 @@
 			</div>
 			<div class="buttons">
 			  <%= link_to edit_user_registration_path(current_user) do %>
-			    <i class="glyphicon glyphicon-pencil"></i>
+				<i class="material-icons">edit</i>
 			  <% end %>
 			</div>
 		</li>
@@ -31,7 +31,7 @@
 			</div>
 			<div class="buttons">
 			  <%= link_to edit_account_path(@account) do %>
-			    <i class="glyphicon glyphicon-pencil"></i>
+				<i class="material-icons">edit</i>
 			  <% end %>
 			</div>
 		</li>
@@ -52,14 +52,14 @@
 				    </div>
 				    <div class="buttons">
 					  <%= link_to edit_address_path(address) do %>
-				        <i class="glyphicon glyphicon-pencil"></i>
+				        <i class="material-icons">edit</i>
 				      <% end %>
 				    </div>
 				  </li>
 				<% end %>
 				<div class="buttons" id="add-address">
 				  <%= link_to new_address_path do %>
-			        <i class="glyphicon glyphicon-plus"></i>
+				    <i class="material-icons">add_circle_outline</i>
 			        <span class="no-bold"> Add A New Address</span>
 			      <% end %>
 			    </div>

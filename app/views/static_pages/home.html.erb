@@ -1,3 +1,5 @@
 <%= link_to "Complete account set up", new_account_path if current_user && !current_user.account%>
 <%= link_to "Complete account set up", edit_account_path(current_user.account) if current_user && current_user.account%>
 
+
+
