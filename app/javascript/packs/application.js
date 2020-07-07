@@ -13,26 +13,7 @@ import './bootstrap_custom.js'
 import '../stylesheets/application'
 import '../scripts/accounts_form.js'
 
-$(document).ready( function() {
-  alert('Page is loaded');
-  const otherDiv = $("#other-div");
-  console.log("accounts_form");
-  $("#account_institution_type").change( function() {
-  	const selected = $(this).val();
-  	if (selected === "Other") {
- 	  otherDiv.show();
-  	} else {
-      otherDiv.hide();
-    }
-  });
 
-  const accountEditForm = $(".account-edit-form")
-  if (accountEditForm) {
-  	const otherType = $("#account_other_type");
-  	const institutionType = $("#institution_type");
-  	otherType.val(institutionType.text());
-  }
-});
 
 
 

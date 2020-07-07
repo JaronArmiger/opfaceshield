@@ -1,5 +1,4 @@
-/*
-$(document).ready( function() {
+$(document).on('turbolinks:load', function() {
   alert('Page is loaded');
   const otherDiv = $("#other-div");
   console.log("accounts_form");
@@ -19,4 +18,3 @@ $(document).ready( function() {
   	otherType.val(institutionType.text());
   }
 });
-*/
