@@ -9,9 +9,9 @@ $(document).on('turbolinks:load', function() {
   const newAddressButton = $('#new-address-btn');
   const newAddressDiv = $('#new-address-div');
   const radioButtons = $('input[type=radio]');
-
   if (newAddressButton) {
-  	newAddressDiv.hide();
+  	console.log('button');
+    newAddressDiv.hide();
     newAddressDiv.toggleClass('showing');
   }
 
@@ -25,4 +25,5 @@ $(document).on('turbolinks:load', function() {
     }
     newAddressDiv.toggleClass('showing');
   })
+
 });

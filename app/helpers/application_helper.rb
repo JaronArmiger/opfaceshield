@@ -8,11 +8,14 @@ module ApplicationHelper
 	end
 
 	def redirect_back_or(default)
+	  puts "redirecting"
+	  p session[:forwarding_url]
 	  redirect_to(session[:forwarding_url] || default)
 	  session.delete(:forwarding_url)
 	end
 
 	def store_location
 	  session[:forwarding_url] = request.original_url if request.get?
+	  p session[:forwarding_url]
 	end
 end

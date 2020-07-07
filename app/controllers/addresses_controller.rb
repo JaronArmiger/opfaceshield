@@ -7,7 +7,8 @@ class AddressesController < ApplicationController
 		@address = current_user_account.addresses.build(address_params)
 		if @address.save
 		  flash[:success] = "New address added!"
-		  redirect_to account_path(current_user_account)
+		  puts "saved!"
+		  redirect_back_or(account_path(current_user_account))
 		else
 		  render :new
 		end
