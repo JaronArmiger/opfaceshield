@@ -6,7 +6,9 @@ $(document).ready( function() {
   	const selected = $(this).val();
   	if (selected === "Other") {
  	  otherDiv.show();
-  	}
+  	} else {
+      otherDiv.hide();
+    }
   });
 
   const accountEditForm = $(".account-edit-form")
