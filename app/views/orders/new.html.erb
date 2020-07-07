@@ -30,34 +30,36 @@
 		  <li class="list-group-item order-form-address">
 			<%= f.radio_button :address_id, address.id %>
 			<div class="info">
-				<p>Street Address: <%= address.street_address %></p>
-				<p>City: <%= address.city %></p>
-				<p>State: <%= address.state %></p>
-				<p>Zip Code: <%= address.zipcode %></p>
+				<p><span class="font-weight-bold">Street Address:</span> <%= address.street_address %></p>
+				<p><span class="font-weight-bold">City:</span> <%= address.city %></p>
+				<p><span class="font-weight-bold">State:<span class="font-weight-bold"> <%= address.state %></p>
+				<p><span class="font-weight-bold">Zip Code:</span> <%= address.zipcode %></p>
 			</div>
 		  </li>
 	  </ul>
   	  <% end %>
   	</div>
-	  <span>Or Enter A New Address</span>
+	  <span id="new-address-btn" style="cursor: pointer" ><i class="material-icons">add_circle_outline</i> Or Enter A New Address</span>
 	<% else %>
 	  <span>Enter Address Information</span>
   	<% end %>
-  	<div class="form-group">
-      <%= f.label :street_address, "Street Address" %>
-      <%= f.text_field :street_address, class: "form-control" %>
-   </div>
-   <div class="form-group">
-      <%= f.label :city %>
-      <%= f.text_field :city, class: "form-control" %>
-   </div>
-   <div class="form-group">
-      <%= f.label :state %>
-      <%= f.select :state, options_for_select(us_states, yield(:preselect_state)), {}, class: "form-control" %>
-   </div>
-   <div class="form-group">
-      <%= f.label :zipcode %>
-      <%= f.text_field :zipcode, class: "form-control" %>
+  	<div id="new-address-div" class="showing" >
+	  	<div class="form-group">
+	      <%= f.label :street_address, "Street Address" %>
+	      <%= f.text_field :street_address, class: "form-control" %>
+	   </div>
+	   <div class="form-group">
+	      <%= f.label :city %>
+	      <%= f.text_field :city, class: "form-control" %>
+	   </div>
+	   <div class="form-group">
+	      <%= f.label :state %>
+	      <%= f.select :state, options_for_select(us_states, yield(:preselect_state)), {}, class: "form-control" %>
+	   </div>
+	   <div class="form-group">
+	      <%= f.label :zipcode %>
+	      <%= f.text_field :zipcode, class: "form-control" %>
+	   </div>
    </div>
   <%= f.submit "Place Order" %>
 <% end %>

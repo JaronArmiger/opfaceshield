@@ -3,3 +3,17 @@
 	justify-content: space-between;
 	align-items: center;
 }
+
+#new-address-div {
+	transition: all 2s ease;
+}
+
+#new-address-btn {
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+#new-address-btn i {
+	margin-right: .5rem;
+}
