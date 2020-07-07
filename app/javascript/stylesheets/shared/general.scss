@@ -2,9 +2,19 @@ $dat-grey: rgba(0,0,0,0.7);
 $border: 2px solid $dat-grey;
 $border-radius: .7rem;
 
+form label {
+	font-weight: 700;
+}
+
+
 .alert-alert {
 	background-color: rgba(255, 225, 0, 0.8);
 	color: #7a7128;
+}
+
+.alert-notice {
+	background-color: rgba(252, 123, 3, 0.5);
+	color: #8f4806;
 }
 
 #error_explanation {
@@ -124,4 +134,9 @@ input[type="submit"] {
 
 #error_explanation h2 {
 	font-size: 1.1rem;
+}
+
+.little-p {
+	font-size: .8rem;
+	margin-top: .3rem;
 }

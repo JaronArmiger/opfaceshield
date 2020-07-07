@@ -4,6 +4,10 @@ class OrdersController < ApplicationController
 	  @order = Order.new
 	end
 
+	def create
+		raise params.inspect
+	end
+
 	private
 
 	  def account_set_up?

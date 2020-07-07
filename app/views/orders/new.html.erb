@@ -2,10 +2,26 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
   	<%= f.label :num_shields, "Number of Face Shields" %>
+  	<figure class="my-2 mx-auto d-block">
+	  	<img src="https://lh5.googleusercontent.com/sCABL8Qrsdp8OZHRInK8C-66UJg3FzJb7XMta0JgPjuHAyMPsofPo3mMCNlmwcIsRhyO3MLXNk5-rBdRcxd9haPrAlew3DcaPjeQAuiIk1SV9nxd_Sul98Vmqc0F=w200" alt="face shield" class="img-fluid">
+		<figcaption class="figure-caption">example face shield</figcaption>
+	</figure>
   	<%= f.number_field :num_shields, class: "form-control" %>
-  	<%= f.label :num_adjusters, "Number of Face Shields" %>
+  	<%= f.label :num_adjusters, "Number of Mask Adjusters" %>
+  	<figure class="my-2 mx-auto d-block">
+	  	<img src="https://lh5.googleusercontent.com/-iyjgAQ2eMbh8kIEh-Wy3OkGITqVMgjSeTu7JPcyg-pbxRy02zB9ZwNLsMfzOb47NuZ9dZ_UErjX0BrWdhCtltobpor0jhcvGIsaYr-Z7_etv7wHytaTCtOtRWKl=w600" alt="mask adjuster" alt="face shield" class="img-fluid">
+		<figcaption class="figure-caption">example mask adjuster</figcaption>
+	</figure>
   	<%= f.number_field :num_adjusters, class: "form-control" %>
-  	<%= f.label :message, "Briefly describe the purpose/mission of your organization. Why are you requesting this equipment? (limit 140 characters)" %>
+  	<span>Briefly describe the purpose/mission of your organization. Why are you requesting this equipment? (limit 140 characters)</span>
   	<%= f.text_area :message, class: "form-control" %>
+  	<p class="little-p"><span id="char-counter">140</span> characters remaining</p>
+  	<% if !current_user_account.addresses.empty? %>
+  	  <%= collection_radio_buttons @order, :address_id, current_user_account.addresses, :id, :street_address %>
+
+	<% else %>
+	  <p>no addresses</p>
+  	<% end %>
   </div>
+  <%= f.submit "Place Order" %>
 <% end %>
