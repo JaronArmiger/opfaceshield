@@ -2,26 +2,62 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
   	<%= f.label :num_shields, "Number of Face Shields" %>
-  	<figure class="my-2 mx-auto d-block">
+  	<figure class="mb-2 mx-auto d-block">
 	  	<img src="https://lh5.googleusercontent.com/sCABL8Qrsdp8OZHRInK8C-66UJg3FzJb7XMta0JgPjuHAyMPsofPo3mMCNlmwcIsRhyO3MLXNk5-rBdRcxd9haPrAlew3DcaPjeQAuiIk1SV9nxd_Sul98Vmqc0F=w200" alt="face shield" class="img-fluid">
 		<figcaption class="figure-caption">example face shield</figcaption>
 	</figure>
   	<%= f.number_field :num_shields, class: "form-control" %>
+  </div>
+  <div class="form-group">
   	<%= f.label :num_adjusters, "Number of Mask Adjusters" %>
-  	<figure class="my-2 mx-auto d-block">
+  	<figure class="mb-2 mx-auto d-block">
 	  	<img src="https://lh5.googleusercontent.com/-iyjgAQ2eMbh8kIEh-Wy3OkGITqVMgjSeTu7JPcyg-pbxRy02zB9ZwNLsMfzOb47NuZ9dZ_UErjX0BrWdhCtltobpor0jhcvGIsaYr-Z7_etv7wHytaTCtOtRWKl=w600" alt="mask adjuster" alt="face shield" class="img-fluid">
 		<figcaption class="figure-caption">example mask adjuster</figcaption>
 	</figure>
   	<%= f.number_field :num_adjusters, class: "form-control" %>
-  	<span>Briefly describe the purpose/mission of your organization. Why are you requesting this equipment? (limit 140 characters)</span>
+  </div>
+  <div class="form-group">
+  	<span>Why are you requesting this equipment? (limit 140 characters)</span>
   	<%= f.text_area :message, class: "form-control" %>
   	<p class="little-p"><span id="char-counter">140</span> characters remaining</p>
-  	<% if !current_user_account.addresses.empty? %>
-  	  <%= collection_radio_buttons @order, :address_id, current_user_account.addresses, :id, :street_address %>
-
-	<% else %>
-	  <p>no addresses</p>
-  	<% end %>
   </div>
+  	<% if !current_user_account.addresses.empty? %>
+  	<div class="form-group">
+  	  <span>Select An Address</span>
+  	  <br>
+  	  <ul class="list-group">
+  	    <% current_user_account.addresses.each do |address| %>
+		  <li class="list-group-item order-form-address">
+			<%= f.radio_button :address_id, address.id %>
+			<div class="info">
+				<p>Street Address: <%= address.street_address %></p>
+				<p>City: <%= address.city %></p>
+				<p>State: <%= address.state %></p>
+				<p>Zip Code: <%= address.zipcode %></p>
+			</div>
+		  </li>
+	  </ul>
+  	  <% end %>
+  	</div>
+	  <span>Or Enter A New Address</span>
+	<% else %>
+	  <span>Enter Address Information</span>
+  	<% end %>
+  	<div class="form-group">
+      <%= f.label :street_address, "Street Address" %>
+      <%= f.text_field :street_address, class: "form-control" %>
+   </div>
+   <div class="form-group">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: "form-control" %>
+   </div>
+   <div class="form-group">
+      <%= f.label :state %>
+      <%= f.select :state, options_for_select(us_states, yield(:preselect_state)), {}, class: "form-control" %>
+   </div>
+   <div class="form-group">
+      <%= f.label :zipcode %>
+      <%= f.text_field :zipcode, class: "form-control" %>
+   </div>
   <%= f.submit "Place Order" %>
 <% end %>
