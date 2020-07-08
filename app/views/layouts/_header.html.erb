@@ -14,6 +14,9 @@
           <%= link_to "Place Order", new_order_path, class: "nav-link active" %>
         </li>
          <% if current_user_account %>
+           <% if current_user_account.orders.any? %>
+             <%= link_to "My Orders", orders_path, class: "nav-link active" %>
+           <% end %>
            <li class="nav-item">
              <%= link_to "My Account", account_path(current_user_account), class: "nav-link" %>
            </li>

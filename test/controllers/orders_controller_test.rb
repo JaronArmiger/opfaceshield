@@ -77,6 +77,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Order.count' do
       delete order_path(processed_order)
     end
+    assert_not flash.empty?
     assert_redirected_to root_path
   end
 

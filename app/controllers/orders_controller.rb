@@ -46,7 +46,6 @@ class OrdersController < ApplicationController
 	  flash[:success] = "Order canceled!"
 	  redirect_to root_path
 	  OrderMailer.cancellation(current_user, @order).deliver_now
-	  # send cancellation email to user
 	  # send notification email to admin
 	end
 
@@ -84,6 +83,9 @@ class OrdersController < ApplicationController
 	  def order_processed?
 	  	unless current_user.admin?
 	  	  @order = Order.find_by(id: params[:id])
+	  	  flash[:notice] = "Your order cannot be cancelled because it's already on the way!
+	  	  					You can email our administrator at #{administrator.email} and
+	  	  					we can try to work towards a solution."
 	  	  redirect_to root_url if @order.processed?
 	  	end
 	  end

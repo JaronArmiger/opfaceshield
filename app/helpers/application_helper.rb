@@ -18,4 +18,8 @@ module ApplicationHelper
 	  session[:forwarding_url] = request.original_url if request.get?
 	  p session[:forwarding_url]
 	end
+
+	def administrator
+	  @administrator ||= User.find(1)
+	end
 end
