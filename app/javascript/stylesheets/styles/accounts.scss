@@ -13,6 +13,16 @@
 	flex-basis: 90%;
 }
 
+.buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.buttons a {
+	text-align: right;
+}
+
 .buttons i {
   color: var(--dark);
 }

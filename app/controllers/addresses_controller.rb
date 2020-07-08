@@ -1,4 +1,6 @@
 class AddressesController < ApplicationController
+	before_action :my_address?, only: [:edit, :update]
+
 	def new
 		@address = Address.new
 	end
@@ -38,5 +40,15 @@ class AddressesController < ApplicationController
 	  	params.require(:address).permit(:street_address,
 	  									:city, :state,
 	  									:zipcode)
+	  end
+
+	  def my_address?
+	  	unless current_user.admin?
+	  		addresses = current_user_account.addresses
+	  		has_address = addresses.any? { |a| a.id == params[:id].to_i }
+	  		unless has_address
+	  		  redirect_to root_path
+	  		end
+	  	end
 	  end
 end

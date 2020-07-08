@@ -13,6 +13,9 @@
 			  <%= link_to edit_user_registration_path(current_user) do %>
 				<i class="material-icons">edit</i>
 			  <% end %>
+			  <%= link_to user_registration_path, method: :delete do %>
+				Cancel My Account
+			  <% end %>
 			</div>
 		</li>
 		<li class="list-group-item info-group">

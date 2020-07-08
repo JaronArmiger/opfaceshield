@@ -48,4 +48,23 @@ class AccountTest < ActiveSupport::TestCase
   	@account.phone_number = "1" * 10
   	assert @account.valid?
   end
+
+  test "should accept address attributes" do
+    user = users(:alfonso)
+    address_attributes = { street_address: "24 Chalman Dr",
+                           city: "Sorghum",
+                           state: "Parham",
+                           zipcode: 45500 }
+    account_attributes = { institution_name: "Bronteen House Hospital",
+                           institution_type: "Medical",
+                           contact_first_name: "Boris",
+                           contact_last_name: "Risque",
+                           phone_number: 4552238787,
+                           user_id: user.id,
+                           'addresses_attributes' => {'0' => address_attributes}
+                           }
+    assert_difference 'Account.count', 1 do
+      Account.create(account_attributes)
+    end
+  end
 end

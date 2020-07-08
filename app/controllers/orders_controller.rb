@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 	before_action :account_set_up?, only: [:new]
 	before_action :has_address?, only: [:new]
+	before_action :my_order?, only: [:show]
 
 	def index
 		if current_user.admin?
@@ -61,5 +62,12 @@ class OrdersController < ApplicationController
 	  	  store_location
 	  	  redirect_to new_address_path
 	    end
+	  end
+
+	  def my_order?
+	  	unless current_user.admin?
+	  	  @order = current_user_account.orders.find_by(id: params[:id])
+	  	  redirect_to root_url if @order.nil?
+	  	end
 	  end
 end

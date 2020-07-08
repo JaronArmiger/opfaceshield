@@ -1,19 +1,19 @@
 <%= form_with(model: @order, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
-  	<%= f.label :num_shields, "Number of Face Shields" %>
   	<figure class="mb-2 mx-auto d-block">
 	  	<img src="https://lh5.googleusercontent.com/sCABL8Qrsdp8OZHRInK8C-66UJg3FzJb7XMta0JgPjuHAyMPsofPo3mMCNlmwcIsRhyO3MLXNk5-rBdRcxd9haPrAlew3DcaPjeQAuiIk1SV9nxd_Sul98Vmqc0F=w200" alt="face shield" class="img-fluid">
 		<figcaption class="figure-caption">example face shield</figcaption>
 	</figure>
+	<%= f.label :num_shields, "Number of Face Shields" %>
   	<%= f.number_field :num_shields, class: "form-control" %>
   </div>
   <div class="form-group">
-  	<%= f.label :num_adjusters, "Number of Mask Adjusters" %>
   	<figure class="mb-2 mx-auto d-block">
 	  	<img src="https://lh5.googleusercontent.com/-iyjgAQ2eMbh8kIEh-Wy3OkGITqVMgjSeTu7JPcyg-pbxRy02zB9ZwNLsMfzOb47NuZ9dZ_UErjX0BrWdhCtltobpor0jhcvGIsaYr-Z7_etv7wHytaTCtOtRWKl=w600" alt="mask adjuster" alt="face shield" class="img-fluid">
 		<figcaption class="figure-caption">example mask adjuster</figcaption>
 	</figure>
+	<%= f.label :num_adjusters, "Number of Mask Adjusters" %>
   	<%= f.number_field :num_adjusters, class: "form-control" %>
   </div>
   <div class="form-group">

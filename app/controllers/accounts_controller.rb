@@ -2,6 +2,7 @@ class AccountsController < ApplicationController
 	include AccountsHelper
 	
 	before_action :has_account?, only: [:new]
+	before_action :my_account?, only: [:show, :edit, :destroy]
 
 	def show
 		@account = Account.find(params[:id])
@@ -39,6 +40,10 @@ class AccountsController < ApplicationController
 		end
 	end
 
+	def destroy
+		raise params.inspect
+	end
+
 	private
 
 	  def account_new_params
@@ -72,5 +77,13 @@ class AccountsController < ApplicationController
 
 	  def has_account?
 	  	redirect_to root_path if current_user_account
+	  end
+
+	  def my_account?
+	  	unless current_user.admin?
+	  	  unless current_user_account.id == params[:id].to_i
+	  	  	redirect_to root_path
+	  	  end
+	  	end
 	  end
 end
