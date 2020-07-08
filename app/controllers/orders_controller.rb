@@ -45,6 +45,9 @@ class OrdersController < ApplicationController
 	  @order.destroy
 	  flash[:success] = "Order canceled!"
 	  redirect_to root_path
+	  OrderMailer.cancellation(current_user, @order).deliver_now
+	  # send cancellation email to user
+	  # send notification email to admin
 	end
 
 	private

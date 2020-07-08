@@ -40,13 +40,14 @@
   <%= @account.contact_first_name %>,
 </p>
 <p>
-  Thanks for your order! Your equipment will reach you shortly.
-  Keep fighting the good fight!
+  Your order has been canceled! We appreciate you having reached out to us, and hope to reconnect in the future.
+</p>
+<p>
+	Keep fighting the good fight!
 </p>
 <em>
 	Operation Face Shield Chicago
 </em>
-<%= link_to "View My Order", order_url(@order) %>
 <div class="order-info">
 	<h2>Order Info</h2>
 	<ul>
@@ -55,13 +56,5 @@
 		<li><span>Mask Adjusters: </span><%= @order.num_adjusters %></li>
 	</ul>
 </div>
-<div class="address-info">
-	<h2>Shipping Address</h2>
-	<ul>
-		<li><span>Street Address: </span><%= @order.street_address %></li>
-		<li><span>City: </span><%= @order.city %></li>
-		<li><span>State: </span><%= @order.state %></li>
-		<li><span>Zip Code: </span><%= @order.zipcode %></li>
-	</ul>
-</div>
+
 
