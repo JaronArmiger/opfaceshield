@@ -18,6 +18,8 @@ class AddressesControllerTest < ActionDispatch::IntegrationTest
   	assert_redirected_to new_user_session_path
   	patch address_path(address)
   	assert_redirected_to new_user_session_path
+    delete address_path(address)
+    assert_redirected_to new_user_session_path
   end
 
   test "edit and update work on user's own addresses when signed in" do
@@ -59,6 +61,21 @@ class AddressesControllerTest < ActionDispatch::IntegrationTest
   	assert_not_equal other_address.reload.city, city
   	assert_not_equal other_address.reload.state, state
   	assert_not_equal other_address.reload.zipcode, zipcode
+  end
+
+  test "should successfully delete signed in user's address" do
+    sign_in @first_user
+    my_address = @first_user.account.addresses.first
+    assert_difference 'Address.count', -1 do
+      delete address_path(my_address)
+    end
+  end
+
+  test "should redirect delete on another user's address" do
+    sign_in @first_user
+    other_address = @second_user.account.addresses.first
+    delete address_path(other_address)
+    assert_redirected_to root_path
   end
 
 end

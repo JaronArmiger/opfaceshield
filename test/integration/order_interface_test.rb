@@ -8,6 +8,7 @@ class OrderInterfaceTest < ActionDispatch::IntegrationTest
   	# second user has account but no addresses
   	@second_user = users(:ozuna)
   	@second_user.confirm
+    @second_user.account.addresses.delete_all
   	# third user has account and address
   	@third_user = users(:alfonso)
   	@third_user.confirm
