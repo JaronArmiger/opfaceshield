@@ -10,4 +10,5 @@ class Order < ApplicationRecord
 							  numericality: { only_integer: true,
 											less_than_or_equal_to: 999 }
 	validates :message, presence: true, length: { maximum: 140 }
+
 end

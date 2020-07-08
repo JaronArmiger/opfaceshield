@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
 	  if @order.save
 	  	flash[:success] = "Order placed!"
 	  	redirect_to order_path(@order)
+	  	OrderMailer.confirmation(current_user, @order).deliver_now
 	  else
 	  	render :new
 	  end
