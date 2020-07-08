@@ -2,15 +2,34 @@ class OrdersController < ApplicationController
 	before_action :account_set_up?, only: [:new]
 	before_action :has_address?, only: [:new]
 
+	def index
+	end
+
+	def show
+		@order = Order.find(params[:id])
+	end
+
 	def new
 	  @order = Order.new
 	end
 
 	def create
+	  order_attributes = order_params
 	  
-	  if (address_id = params[:order][:address_id])
+	  if (address_id = order_params[:address_id])
 	  	address = Address.find(address_id)
-	  	p address
+	  	order_attributes[:street_address] = address[:street_address]
+	  	order_attributes[:city] = address[:city]
+	  	order_attributes[:state] = address[:state]
+	  	order_attributes[:zipcode] = address[:zipcode]
+	  end
+	  order_attributes.delete(:address_id)
+	  @order = current_user_account.orders.build(order_attributes)
+	  if @order.save
+	  	flash[:success] = "Order placed!"
+	  	redirect_to order_path(@order)
+	  else
+	  	render :new
 	  end
 	end
 
