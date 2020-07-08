@@ -10,5 +10,9 @@ class Order < ApplicationRecord
 							  numericality: { only_integer: true,
 											less_than_or_equal_to: 999 }
 	validates :message, presence: true, length: { maximum: 140 }
+	validates :street_address, presence: true, length: { maximum: 100 }
+	validates :city, presence: true
+	validates :state, presence: true
+	validates :zipcode, presence: true, length: { is: 5 }, numericality: true
 
 end

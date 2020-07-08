@@ -6,4 +6,8 @@ one:
   message: muchas gracias por el equipo
   account: one
   processed: false
+  street_address: 79 W Pharoah Dr
+  city: Gatorsville
+  state: Alabama
+  zipcode: 45500
 

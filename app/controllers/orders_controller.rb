@@ -3,6 +3,11 @@ class OrdersController < ApplicationController
 	before_action :has_address?, only: [:new]
 
 	def index
+		if current_user.admin?
+			@orders = Order.all
+		else
+			@orders = current_user_account.orders
+		end
 	end
 
 	def show

@@ -39,4 +39,38 @@ class OrderTest < ActiveSupport::TestCase
     assert_not @order.valid?
   end
 
+  test "street address must be present" do
+    @order.street_address = nil
+    assert_not @order.valid?
+  end
+
+  test "street address must be less than 101 chars" do
+    @order.street_address = "a" * 101
+    assert_not @order.valid?
+  end
+
+  test "city must be present" do
+    @order.city = nil
+    assert_not @order.valid?
+  end  
+  
+  test "state must be present" do
+    @order.state = nil
+    assert_not @order.valid?
+  end
+
+  test "zipcode must be 5 digits" do
+    @order.zipcode = 2050
+    assert_not @order.valid?
+  end
+
+  test "zipcode should only contain numbers" do
+    @order.zipcode = "A" * 5
+    assert_not @order.valid?
+  end
+
+  test "zipcode should convert string digits to integer" do
+    @order.zipcode = "1" * 5
+    assert @order.valid?
+  end
 end
