@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-	before_action :my_address?, only: [:edit, :update]
+	before_action :my_address?, only: [:edit, :update, :destroy]
 
 	def new
 		@address = Address.new
@@ -31,7 +31,11 @@ class AddressesController < ApplicationController
 		end
 	end
 
-	def delete
+	def destroy
+		@address = Address.find(params[:id])
+		@address.destroy
+		flash[:success] = "Address removed!"
+		redirect_to account_path(current_user_account)
 	end
 
 	private

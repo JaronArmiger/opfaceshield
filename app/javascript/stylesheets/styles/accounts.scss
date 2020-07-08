@@ -1,3 +1,8 @@
+.list-group-item {
+	border-left: 0;
+	border-right: 0;
+}
+
 .account-info span {
 	font-weight: 700;
 }
@@ -13,18 +18,30 @@
 	flex-basis: 90%;
 }
 
+.addresses-li {
+	padding: 0;
+	h2 {
+		margin-left: 1rem;
+	}
+}
+
 .buttons {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+	justify-content: space-between;
 }
 
 .buttons a {
 	text-align: right;
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 .buttons i {
   color: var(--dark);
+  font-size: 1.5rem;
 }
 
 .account-info .no-bold {

@@ -13,7 +13,7 @@
 			  <%= link_to edit_user_registration_path(current_user) do %>
 				<i class="material-icons">edit</i>
 			  <% end %>
-			  <%= link_to user_registration_path, method: :delete do %>
+			  <%= link_to user_registration_path, data: { confirm: "Are you sure?" }, method: :delete do %>
 				Cancel My Account
 			  <% end %>
 			</div>
@@ -38,7 +38,7 @@
 			  <% end %>
 			</div>
 		</li>
-		<li class="list-group-item">
+		<li class="list-group-item addresses-li">
 			<h2><%= pluralize_address(@account.addresses.count, "Address") %></h2>
 			<ul class="list-group">
 				<% @account.addresses.each do |address| %>
@@ -56,6 +56,9 @@
 				    <div class="buttons">
 					  <%= link_to edit_address_path(address) do %>
 				        <i class="material-icons">edit</i>
+				      <% end %>
+				      <%= link_to address_path(address), data: { confirm: "Are you sure want to delete this address?" },method: :delete do %>
+				        <i class="material-icons">delete_outline</i>
 				      <% end %>
 				    </div>
 				  </li>

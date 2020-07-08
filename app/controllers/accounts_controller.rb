@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
 	include AccountsHelper
 	
 	before_action :has_account?, only: [:new]
-	before_action :my_account?, only: [:show, :edit, :destroy]
+	before_action :my_account?, only: [:show, :edit]
 
 	def show
 		@account = Account.find(params[:id])
@@ -40,9 +40,6 @@ class AccountsController < ApplicationController
 		end
 	end
 
-	def destroy
-		raise params.inspect
-	end
 
 	private
 

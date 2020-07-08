@@ -1,6 +1,6 @@
 
 <% if current_user && !current_user_account %>
-  <div class="alert alert-success">
+  <div class="alert alert-notice">
 	<%= link_to "Complete account set up", new_account_path %> to begin ordering face shields!
   </div>
 <% end %>

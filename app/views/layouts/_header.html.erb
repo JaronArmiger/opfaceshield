@@ -21,6 +21,11 @@
            <li class="nav-item">
              <%= link_to "Complete Account Set Up", new_account_path, class: "nav-link" %>
            </li>
+           <li class="nav-item">
+             <%= link_to user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "nav-link" do %>
+               Cancel My Account
+             <% end %>
+           </li>
          <% end %>
          <li class="nav-item">
            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
