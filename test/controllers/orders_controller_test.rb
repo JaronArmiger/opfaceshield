@@ -53,4 +53,40 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   	assert_redirected_to root_path
   end
 
+  test "should redirect destroy if user not signed in" do
+    order = orders(:one)
+    assert_no_difference 'Order.count' do
+      delete order_path(order)
+    end
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should redirect destroy on other user's order" do
+    sign_in @first_user
+    order = @second_user.account.orders.first
+    assert_no_difference 'Order.count' do
+      delete order_path(order)
+    end
+    assert_redirected_to root_path
+  end
+
+  test "should redirect destroy if order already processed" do
+    sign_in @first_user
+    processed_order = @first_user.account.orders.last
+    assert processed_order.processed?
+    assert_no_difference 'Order.count' do
+      delete order_path(processed_order)
+    end
+    assert_redirected_to root_path
+  end
+
+  test "should successfully destroy if user signed in and order not processed" do
+    sign_in @first_user
+    unprocessed_order = @first_user.account.orders.first
+    assert_not unprocessed_order.processed?
+    assert_difference 'Order.count', -1 do
+      delete order_path(unprocessed_order)
+    end
+    assert_redirected_to root_path
+  end
 end

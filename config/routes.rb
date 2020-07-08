@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :accounts, except: [:index, :destroy]
   resources :addresses, except: [:index, :show]
-  resources :orders
+  resources :orders, except: [:edit, :update]
 end

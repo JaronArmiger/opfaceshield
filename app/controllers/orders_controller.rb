@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
-	before_action :account_set_up?, only: [:new]
-	before_action :has_address?, only: [:new]
-	before_action :my_order?, only: [:show]
+	before_action :account_set_up?
+	before_action :has_address?
+	before_action :my_order?, only: [:show, :destroy]
+	before_action :order_processed?, only: [:destroy]
 
 	def index
 		if current_user.admin?
@@ -40,6 +41,12 @@ class OrdersController < ApplicationController
 	  end
 	end
 
+	def destroy
+	  @order.destroy
+	  flash[:success] = "Order canceled!"
+	  redirect_to root_path
+	end
+
 	private
 
 	  def order_params
@@ -49,7 +56,7 @@ class OrdersController < ApplicationController
 	  end
 
 	  def account_set_up?
-	  	if !current_user_account
+	  	if !current_user_account && !current_user.admin?
 	  	  flash[:alert] = "Finish account set up before placing order."
 	  	  store_location
 	  	  redirect_to new_account_path
@@ -57,7 +64,7 @@ class OrdersController < ApplicationController
 	  end
 
 	  def has_address?
-	  	if current_user_account.addresses.empty?
+	  	if !current_user.admin? && current_user_account.addresses.empty?
 	  	  flash[:alert] = "Add address to your account before placing order."
 	  	  store_location
 	  	  redirect_to new_address_path
@@ -68,6 +75,13 @@ class OrdersController < ApplicationController
 	  	unless current_user.admin?
 	  	  @order = current_user_account.orders.find_by(id: params[:id])
 	  	  redirect_to root_url if @order.nil?
+	  	end
+	  end
+
+	  def order_processed?
+	  	unless current_user.admin?
+	  	  @order = Order.find_by(id: params[:id])
+	  	  redirect_to root_url if @order.processed?
 	  	end
 	  end
 end
