@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :accounts, except: [:index, :destroy]
   resources :addresses, except: [:index, :show]
   resources :orders, except: [:edit, :update]
+  namespace :admin do
+  	resources :accounts
+  	resources :addresses
+  	resources :orders
+  end
 end
