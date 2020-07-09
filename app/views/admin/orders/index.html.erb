@@ -1,6 +1,2 @@
-
-
-<br>
-<% @orders.each do |order| %>
-  <%= order.inspect %>
-<% end %>
+<%= render @unprocessed %>
+<%= render @processed %>

@@ -1,7 +1,9 @@
 module Admin
   class OrdersController < ApplicationController
   	def index
-  	  @orders = Order.all
+  	  @processed = Order.where("processed = true")
+  	  @unprocessed = Order.where("processed = false")
+  	  #@orders = Order.all
   	end
   end
 end

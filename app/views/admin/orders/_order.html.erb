@@ -1,0 +1,26 @@
+<% @account = order.account %>
+<div class="card">
+  <div class="admin-order-header" style="background-color: <%= order.processed? ? "#18a83e" : "#e6342e" %>;">
+  	  <h2>Order #<%= order.id %></h2>
+  </div>
+	<li class="list-group-item order-info-group">
+		<div class="order info order-info">
+			<span><b>Face Shields:</b> <%= order.num_shields %></span>
+			<span><b>Mask Adjusters:</b> <%= order.num_adjusters %></span>
+		</div>
+		<div class="account info order-info">
+			<span><b>Recipient:</b> <%= @account.institution_name %></span>
+			<span><b>Contact Name:</b> <%= @account.contact_first_name %> <%= @account.contact_last_name %></span>
+			<span><b>Phone Number:</b> <%= @account.phone_number %></span>
+		</div>
+		<div class="address info order-info">
+			<span><b>Street Address:</b> <%= order.street_address %></span>
+			<span><b>City:</b> <%= order.city %></span>
+			<span><b>State:</b> <%= order.state %></span>
+			<span><b>Zip Code:</b> <%= order.zipcode %></span>
+		</div>
+		<div class="buttons">
+			
+		</div>
+	</li>
+</div>
