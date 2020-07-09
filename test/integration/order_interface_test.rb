@@ -12,6 +12,8 @@ class OrderInterfaceTest < ActionDispatch::IntegrationTest
   	# third user has account and address
   	@third_user = users(:alfonso)
   	@third_user.confirm
+
+    ActionMailer::Base.deliveries.clear
   end
 
   test "should redirect new order path if no account" do
@@ -44,6 +46,7 @@ class OrderInterfaceTest < ActionDispatch::IntegrationTest
   	  						address_id: address.id
   	  					 } }
   	end
+    assert_equal 1, ActionMailer::Base.deliveries.size
   	#submit form by filling in address fields
   	assert_difference 'Order.count', 1 do
   	  post orders_path, params: { order: { 
@@ -56,6 +59,7 @@ class OrderInterfaceTest < ActionDispatch::IntegrationTest
   	  						zipcode: '98777'
   	  					 } }
   	end
+    assert_equal 2, ActionMailer::Base.deliveries.size
   	@order = assigns(:order)
   	assert_redirected_to order_path(@order)
   	follow_redirect!

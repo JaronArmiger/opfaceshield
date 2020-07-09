@@ -20,6 +20,6 @@ module ApplicationHelper
 	end
 
 	def administrator
-	  @administrator ||= User.find(1)
+	  @administrator ||= User.find_by(admin: true)
 	end
 end

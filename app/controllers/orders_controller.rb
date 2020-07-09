@@ -42,10 +42,12 @@ class OrdersController < ApplicationController
 	end
 
 	def destroy
-	  @order.destroy
-	  flash[:success] = "Order canceled!"
+	  
 	  redirect_to root_path
 	  OrderMailer.cancellation(current_user, @order).deliver_now
+	  AdminMailer.cancellation(current_user, @order).deliver_now
+	  @order.destroy
+	  flash[:success] = "Order canceled!"
 	  # send notification email to admin
 	end
 

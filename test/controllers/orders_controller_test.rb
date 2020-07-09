@@ -82,12 +82,14 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should successfully destroy if user signed in and order not processed" do
+    ActionMailer::Base.deliveries.clear
     sign_in @first_user
     unprocessed_order = @first_user.account.orders.first
     assert_not unprocessed_order.processed?
     assert_difference 'Order.count', -1 do
       delete order_path(unprocessed_order)
     end
+    assert_equal 2, ActionMailer::Base.deliveries.size
     assert_redirected_to root_path
   end
 end
