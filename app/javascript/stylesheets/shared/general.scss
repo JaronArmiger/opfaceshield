@@ -6,9 +6,12 @@ form label {
 	font-weight: 700;
 }
 
+.container {
+	padding: 0 .3rem;
+}
+
 .card {
 	margin: .5rem 0;
-	box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
 }
 
 .list-group-item {
@@ -34,6 +37,10 @@ form label {
 
 .dummy {
 	height: 4rem;
+}
+
+.hide {
+	display: none;
 }
 
 .google {

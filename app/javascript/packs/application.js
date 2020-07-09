@@ -13,6 +13,7 @@ import './bootstrap_custom.js'
 import '../stylesheets/application'
 import '../scripts/accounts_form.js'
 import '../scripts/orders_form.js'
+import '../scripts/admin_orders.js'
 
 
 

@@ -1,0 +1,26 @@
+.admin-order-header-wrapper {
+	border-radius: .2rem;
+	padding: .3rem;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.admin-order-header {
+	padding: 0;
+	margin: 0;
+}
+
+.admin-order-info {
+  .buttons {
+  	flex-direction: row;
+  	justify-content: space-around;
+  	margin: .5rem 0;
+  	a {
+  		color: var(--dark);
+  		span {
+  			font-size: 2rem;
+  		}
+  	}
+  }
+}

@@ -10,7 +10,6 @@ $(document).on('turbolinks:load', function() {
   const newAddressDiv = $('#new-address-div');
   const radioButtons = $('input[type=radio]');
   if (newAddressButton) {
-  	console.log('button');
     newAddressDiv.hide();
     newAddressDiv.toggleClass('showing');
   }
