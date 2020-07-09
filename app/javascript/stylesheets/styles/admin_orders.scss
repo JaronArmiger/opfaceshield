@@ -1,6 +1,6 @@
 
 
-.right-link, .left-link {
+.right-link {
 	display: flex;
 	color: $gray-800;
 	width: 80%;
@@ -20,11 +20,29 @@
 	}
 }
 
-.left-link {
-	span {
-      margin-right: .5rem;
+.processed-header-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.order-header {
+	font-size: 2rem;
+	text-transform: lowercase;
+}
+
+.back-link {
+	display: flex;
+	justify-content: flex-start;
+	color: $gray-800;
+	p {
+		margin: 0;
+	}
+	&:hover {
+		text-decoration: none;
 	}
 }
+
 
 .admin-order-header-wrapper {
 	border-radius: .2rem;
