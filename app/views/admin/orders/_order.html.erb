@@ -21,6 +21,14 @@
 			<span><b>Zip Code:</b> <%= order.zipcode %></span>
 		</div>
 		<div class="buttons">
+		  <% if action_name == "unprocessed" || action_name == "processed" %>
+		    <%= link_to admin_orders_path do %>
+			  <span class="material-icons">
+				library_books
+			  </span>
+			  <p>all</p>
+			<% end %>
+		  <% end %>
 		  <%= link_to admin_order_path(order) do %>
 			  <span class="material-icons">
 				visibility
@@ -40,12 +48,6 @@
 				backspace
 			  </span>
 			  <p>unprocess</p>
-			<% end %>
-			<%= link_to admin_order_path(order) do %>
-			  <span class="material-icons">
-				visibility
-			  </span>
-			  <p>view</p>
 			<% end %>
 			<%= link_to '#' do %>
 			  <span class="material-icons">

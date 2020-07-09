@@ -1,3 +1,4 @@
+$main-color: #990b92;
 $dat-grey: rgba(0,0,0,0.7);
 $border: 2px solid $dat-grey;
 $border-radius: .7rem;
@@ -8,6 +9,20 @@ form label {
 
 .container {
 	padding: 0 .3rem;
+}
+
+.navbar {
+	background-color: $main-color;
+}
+
+.navbar-brand {
+	text-transform: uppercase;
+	color: $gray-100!important;
+	font-weight: 700;
+}
+
+.navbar-toggler {
+	color: $gray-100;
 }
 
 .card {

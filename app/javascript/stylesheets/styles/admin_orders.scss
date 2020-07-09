@@ -1,7 +1,20 @@
 .admin-h1-link {
-	color: var(--dark);
+	display: flex;
+	color: $gray-800;
+	width: 80%;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
 	&:hover {
 		text-decoration: none;
+	}
+	h1 {
+		font-size: 2rem;
+		text-transform: lowercase;
+	}
+	span {
+      font-size: 2.5rem;
+      margin-left: .5rem;
 	}
 }
 

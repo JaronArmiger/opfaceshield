@@ -2,12 +2,14 @@
   <div class="col-md-6">
   	<%= link_to unprocessed_admin_orders_path, class: "admin-h1-link" do %>
   	  <h1>Unprocessed</h1>
+  	  <span class="material-icons">last_page</span>
   	<% end %>
   	<%= render @unprocessed %>
   </div>
   <div class="col-md-6">
 	<%= link_to processed_admin_orders_path, class: "admin-h1-link" do %>
   	  <h1>Processed</h1>
+  	  <span class="material-icons">last_page</span>
   	<% end %>
   	<%= render @processed %>
   </div>
