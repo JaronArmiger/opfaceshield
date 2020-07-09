@@ -15,4 +15,11 @@ class Order < ApplicationRecord
 	validates :state, presence: true
 	validates :zipcode, presence: true, length: { is: 5 }, numericality: true
 
+	def process
+	  self.processed = true
+	end
+
+	def unprocess
+	  self.processed = false
+	end
 end

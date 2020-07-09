@@ -36,7 +36,7 @@
 			  <p>view</p>
 			<% end %>
 		  <% if !order.processed? %>
-			<%= link_to '#' do %>
+			<%= link_to admin_order_path(order, process: "hi"), method: :patch do %>
 			  <span class="material-icons">
 				check_circle
 			  </span>

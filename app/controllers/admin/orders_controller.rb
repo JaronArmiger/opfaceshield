@@ -17,5 +17,9 @@ module Admin
   	def unprocessed
   	  @unprocessed = Order.where("processed = false")
   	end
+
+    def update
+      puts params[:process]
+    end
   end
 end
