@@ -36,20 +36,20 @@
 			  <p>view</p>
 			<% end %>
 		  <% if !order.processed? %>
-			<%= link_to admin_order_path(order, process: "hi"), method: :patch do %>
+			<%= link_to admin_order_path(order, process: true), method: :patch do %>
 			  <span class="material-icons">
 				check_circle
 			  </span>
 			  <p>process</p>
 			<% end %>
 		  <% else %>
-		    <%= link_to '#' do %>
+		    <%= link_to admin_order_path(order, process: false), method: :patch do %>
 			  <span class="material-icons">
 				backspace
 			  </span>
 			  <p>unprocess</p>
 			<% end %>
-			<%= link_to '#' do %>
+			<%= link_to admin_order_path(order), method: :delete do %>
 			  <span class="material-icons">
 				delete
 			  </span>

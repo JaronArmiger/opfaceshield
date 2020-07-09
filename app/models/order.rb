@@ -17,9 +17,11 @@ class Order < ApplicationRecord
 
 	def process
 	  self.processed = true
+	  save!
 	end
 
 	def unprocess
 	  self.processed = false
+	  save!
 	end
 end
