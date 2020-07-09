@@ -42,7 +42,7 @@
 			<h2><%= pluralize_address(@account.addresses.count, "Address") %></h2>
 			<ul class="list-group">
 				<% @account.addresses.each do |address| %>
-				  <li class="list-group-item info-group">
+				  <li class="list-group-item info-group address-info">
 				  	<div class="info">
 				  	  <span>Street Address:</span>
 				      <%= address.street_address %>
