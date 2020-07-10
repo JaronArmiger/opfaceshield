@@ -41,7 +41,7 @@ account_three.save
 street_address_two = "5 W Anderson Ln"
 city_two = "Djeraak"
 state_two = "Hisendower"
-zipcode_two = 992211
+zipcode_two = 99221
 
 address_two = Address.new(street_address: street_address_two,
 						  city: city_two,
@@ -60,7 +60,7 @@ address_three = Address.new(street_address: street_address_three,
 						    state: state_three,
 						    zipcode: zipcode_three,
 						    account_id: account_three.id)
-adress_three.save
+address_three.save
 
 # orders
 
