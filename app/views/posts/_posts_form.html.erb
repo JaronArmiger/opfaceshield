@@ -2,7 +2,7 @@
   <%= form_with(model: @post, local: true, class: "post-form") do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class="form-group text-input-div">
-	  <%= f.text_area :content, placeholder: "Write a testimonial!", class: "form-control text-input" %>
+	  <%= f.text_area :content, placeholder: "I love Operation Face Shield because...", class: "form-control text-input" %>
 	  <span class="material-icons"id="x-button">clear</span>
 	</div>
 	<div class="form-group">
