@@ -13,5 +13,8 @@
       <% end %>
       <%= yield %>  
     </div>
+    <% if current_user && current_user_account %>
+      <%= render 'layouts/icon_bar' %>
+    <% end %>
   </body>
 </html>

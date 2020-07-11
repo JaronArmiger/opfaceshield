@@ -1,6 +1,17 @@
-.print-links {
+.print-wrapper {
 	display: flex;
 	flex-direction: column;
+	align-items: stretch;
+}
+
+.print-header {
+	text-align: center;
+}
+
+.print-links {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 	align-items: center;
 }
 

@@ -1,0 +1,22 @@
+<div class="icon-bar">
+	<%= link_to root_path do %>
+		<span class="material-icons">
+			home
+		</span>
+	<% end %>
+	<%= link_to new_order_path do %>
+		<span class="material-icons">
+			local_shipping
+		</span>
+	<% end %>
+	<%= link_to new_post_path do %>
+		<span class="material-icons">
+			message
+		</span>
+	<% end %>
+	<%= link_to account_path(current_user_account) do %>
+		<span class="material-icons">
+			account_circle
+		</span>
+	<% end %>
+</div>

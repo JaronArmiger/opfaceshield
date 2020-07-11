@@ -1,0 +1,15 @@
+.icon-bar {
+	position: fixed;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: $main-color;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.icon-bar a {
+	color: white;
+}
