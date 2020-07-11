@@ -1,4 +1,5 @@
-<%= form_with(model: @post, local: true, class: "post-form") do |f| %>
+<div class="form-wrapper">
+  <%= form_with(model: @post, local: true, class: "post-form") do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class="form-group text-input-div">
 	  <%= f.text_area :content, placeholder: "How you feelin?", class: "form-control text-input" %>
@@ -11,4 +12,5 @@
 		  <%= f.submit yield(:submit), class: "share-button" %>
 		</div>
 	</div>
-<% end %>
+  <% end %>
+</div>
