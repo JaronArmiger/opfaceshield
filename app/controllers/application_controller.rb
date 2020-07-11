@@ -39,4 +39,8 @@ class ApplicationController < ActionController::Base
 	  	end
 	  	false
 	  end
+
+	  def admin_user?
+	  	current_user.admin? ? true : false
+	  end
 end

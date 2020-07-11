@@ -14,7 +14,7 @@ import '../stylesheets/application'
 import '../scripts/accounts_form.js'
 import '../scripts/orders_form.js'
 import '../scripts/admin_orders.js'
-import '../scripts/navbar.js'
+//import '../scripts/navbar.js'
 
 
 
