@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :my_post?, unless: :admin_user?, except: [:index, :new, :create]
-	before_action :has_account, except: [:index]
+	before_action :has_account?, except: [:index]
 
 	def index
 	end
@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 	end
 
 	def new
+		@post = Post.new
 	end
 
 	def create

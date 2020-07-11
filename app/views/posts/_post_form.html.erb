@@ -1,0 +1,17 @@
+<%= form_with(model: @post, local: true, class: "post-form") do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="form-group text-input-div">
+	  <%= f.text_area :content, placeholder: "How you feelin?", class: "form-control text-input" %>
+	  <span id="x-button"></span>
+	</div>
+	<div class="styling form-group">
+	    <div class="upload-div">
+	      <span class="upload-photo"><%= yield(:change) %> Photo</span>
+		  <label for="post_image" class="file-label"><span class="material-icons">add_a_photo</span></label>
+			<%= f.file_field :image, accept: "image/jpeg, image/gif, image/png", class: "img-upload", id: "post_image" %>
+		</div>
+	</div>
+	<div class="post-form-buttons">
+		<%= f.submit yield(:submit), class: "share-button" %>
+	</div>
+<% end %>
