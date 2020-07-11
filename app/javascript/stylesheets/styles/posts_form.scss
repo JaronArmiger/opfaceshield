@@ -37,3 +37,35 @@ input[type="file"] {
 
 	border-radius: 50%;
 }
+
+// text input
+
+.text-input-div {
+	position: relative;
+}
+
+.text-input {
+
+	background-color: rgba(255,255,255,0);
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.text-input:focus {
+	outline: none;
+	background-color: rgba(255,255,255,0);
+	border: 0;
+}
+
+#x-button {
+	//background-image: image-url('x-icon');
+	width: 2.5rem;
+	height: 2.5rem;
+	background-size: cover;
+	position: absolute;
+	top: .7rem;
+	right: 1rem;
+	border: 0;
+	background-color: rgba(0,0,0,0);
+	display: none;
+}
