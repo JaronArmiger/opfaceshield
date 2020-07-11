@@ -14,7 +14,7 @@
         <%= yield %>
         <div class="dummy"></div>
     </div>
-    <% if current_user.admin? %>
+    <% if current_user && current_user.admin? %>
       <%= render 'layouts/admin_icon_bar' %>
     <% else %>
       <% if current_user && current_user_account %>

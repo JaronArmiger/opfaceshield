@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
 
 	def index
 		if current_user.admin?
-			@orders = Order.all
+			@orders = Order.order('created_at DESC')
 		else
 			@orders = current_user_account.orders
 		end
