@@ -14,6 +14,14 @@ class PostsController < ApplicationController
 	end
 
 	def create
+		@post = current_user.posts.build(post_params)
+		@post.image.attach(params[:post][:image])
+		if @post.save
+		  flash[:success] = "Post created!"
+		  redirect_to post_path(@post)
+		else
+		  render :new
+		end
 	end
 
 	def edit
@@ -36,5 +44,9 @@ class PostsController < ApplicationController
 	  	  flash[:alert] = "Finish setting up your account first!"
 	  	  redirect_to root_path
 	  	end
+	  end
+
+	  def post_params
+	  	params.require(:post).permit(:content, :image)
 	  end
 end
