@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
   	resources :accounts
   	resources :addresses
+    resources :posts
   	resources :orders do
       collection do
         get :processed, :unprocessed

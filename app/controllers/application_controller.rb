@@ -3,21 +3,7 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 	before_action :authenticate_user!
 	before_action :store_user_location!, if: :storable_location?
-	#before_action :admin?, if: :admin_controller?
-=begin
-	before_action do |controller|
-	  space = controller.class.name.split("::").first
-	  if space != "Devise" && space == "Admin"
-	  	puts "Admin"
-	  elsif space == "Devise" && space != "Admin"
-	  	puts "Devise"
-	  elsif space != "Devise" && space != "Admin"
-	  	puts "normal"
-	  end
-	  #p space
-	  p current_user
-	end
-=end
+
 	before_action :admin?, if: :admin_controller?
 	private
 
