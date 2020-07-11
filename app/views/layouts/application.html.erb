@@ -11,7 +11,8 @@
           <%= content_tag(:div, msg, class: "alert alert-#{msg_type}") %>
         <% end %>
       <% end %>
-      <%= yield %>  
+      <%= yield %>
+      <div class="dummy"></div>
     </div>
     <% if current_user && current_user_account %>
       <%= render 'layouts/icon_bar' %>

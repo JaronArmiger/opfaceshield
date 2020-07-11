@@ -1,0 +1,8 @@
+<% @account = post.user.account %>
+<div class="post">
+  <%= image_tag post.image, class: "card-img" if post.image.attached? %>
+  <div class="post-content">
+  	<span><%= @account.institution_name %></span>
+  	<p><%= post.content %></p>
+  </div>
+</div>

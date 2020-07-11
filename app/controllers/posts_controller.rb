@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 	before_action :has_account?, except: [:index]
 
 	def index
+		@posts = Post.all
 	end
 
 	def show
