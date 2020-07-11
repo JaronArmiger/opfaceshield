@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 	include PostsHelper
 
-	before_action :my_post?, unless: :admin_user?, except: [:new, :create]
-	before_action :has_account?, unless: :admin_user?
+	before_action :my_post?, unless: :admin_user?, except: [:show, :new, :create]
+	before_action :has_account?, unless: :admin_user?, except: [:show]
 
 
 	def show
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 		@post.image.attach(params[:post][:image])
 		if @post.save
 		  flash[:success] = "Post created!"
-		  redirect_to post_path(@post)
+		  redirect_to root_path
 		else
 		  render :new
 		end

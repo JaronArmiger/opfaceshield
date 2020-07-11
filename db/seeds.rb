@@ -18,6 +18,12 @@ user_three = User.new(email: "loic@pri.gent",
 user_three.confirm
 user_three.save
 
+no_account_user = User.new(email: "no_account@chasseur.fr",
+						   password: "password",
+						   password_confirmation: "password")
+no_account_user.confirm
+no_account_user.save
+
 # accounts
 
 account_two = Account.new(institution_name: "Pirouette Hospital",
