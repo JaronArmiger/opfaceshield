@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
 	include PostsHelper
 
-	before_action :my_post?, unless: :admin_user?, except: [:index, :new, :create]
-	before_action :has_account?, except: [:index], unless: :admin_user?
+	before_action :my_post?, unless: :admin_user?, except: [:new, :create]
+	before_action :has_account?, unless: :admin_user?
 
-	def index
-		@posts = Post.all
-	end
 
 	def show
 		@post = Post.find(params[:id])
@@ -43,6 +40,10 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		flash[:success] = "Post deleted!"
+		redirect_to root_path
 	end
 
 	private

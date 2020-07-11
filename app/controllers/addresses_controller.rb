@@ -22,8 +22,7 @@ class AddressesController < ApplicationController
 
 	def update
 		@address = Address.find(params[:id])
-		@address.update_attributes(address_params)
-		if @address.save
+		if @address.update(address_params)
 		  flash[:success] = "Address updated!"
 		  redirect_to account_path(current_user_account)
 		else

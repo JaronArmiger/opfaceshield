@@ -14,11 +14,4 @@ class PostTest < ActiveSupport::TestCase
   	@post.content = "w" * 141
   	assert_not @post.valid?
   end
-
-  test "deleting user deletes all user's posts" do
-  	assert_not @user.posts.empty?
-  	assert_equal @user, @post.user
-  	@user.destroy
-  	assert_equal Post.count, 0
-  end
 end

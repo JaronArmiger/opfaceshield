@@ -40,6 +40,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   	assert_reponse :success
   end
 
+
   test "should redirect if no account set up yet" do
   end
 
