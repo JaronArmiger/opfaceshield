@@ -2,7 +2,7 @@
 <%= form_with(model: @order, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
-  	<figure class="mb-2 mx-auto d-block">
+  	<figure class="d-flex flex-column align-items-center">
 	  	<img src="https://lh5.googleusercontent.com/sCABL8Qrsdp8OZHRInK8C-66UJg3FzJb7XMta0JgPjuHAyMPsofPo3mMCNlmwcIsRhyO3MLXNk5-rBdRcxd9haPrAlew3DcaPjeQAuiIk1SV9nxd_Sul98Vmqc0F=w200" alt="face shield" class="img-fluid">
 		<figcaption class="figure-caption">example face shield</figcaption>
 	</figure>
@@ -10,7 +10,7 @@
   	<%= f.number_field :num_shields, class: "form-control" %>
   </div>
   <div class="form-group">
-  	<figure class="mb-2 mx-auto d-block">
+  	<figure class="d-flex flex-column align-items-center">
 	  	<img src="https://lh5.googleusercontent.com/-iyjgAQ2eMbh8kIEh-Wy3OkGITqVMgjSeTu7JPcyg-pbxRy02zB9ZwNLsMfzOb47NuZ9dZ_UErjX0BrWdhCtltobpor0jhcvGIsaYr-Z7_etv7wHytaTCtOtRWKl=w600" alt="mask adjuster" alt="face shield" class="img-fluid">
 		<figcaption class="figure-caption">example mask adjuster</figcaption>
 	</figure>
@@ -26,7 +26,7 @@
   	<div class="form-group">
   	  <span>Select An Address</span>
   	  <br>
-  	  <ul class="list-group">
+  	  <ul class="list-group address-group">
   	    <% current_user_account.addresses.each do |address| %>
 		  <li class="list-group-item order-form-address">
 			<%= f.radio_button :address_id, address.id %>
@@ -40,7 +40,9 @@
 	  </ul>
   	  <% end %>
   	</div>
+  	<div class="form-group">
 	  <span id="new-address-btn" style="cursor: pointer" ><i class="material-icons">add_circle_outline</i> Or Enter A New Address</span>
+	</div>
   	<% end %>
   	<div id="new-address-div" class="showing" >
 	  	<div class="form-group">
