@@ -49,6 +49,9 @@ a {
 
 .red {
 	color: $secondary-color!important;
+	&:hover {
+		color: #91030b;
+	}
 }
 
 .page-title {
@@ -155,7 +158,7 @@ input[type="submit"] {
 .devise-form label {
 	font-weight: 700;
 	font-size: 1.2rem;
-	color: $main-color;
+	color: $dark-blue;
 	margin-top: 1rem;
 }
 
@@ -178,8 +181,9 @@ input[type="submit"] {
 	padding: .5rem 1.5rem;
 	font-size: 1.2rem;
 	border: $border;
-	border-color: $main-color;
+	border-color: $dark-blue;
 	border-radius: $border-radius;
+	color: $dark-blue;
 	&:focus {
 		outline: none;
 		background-color: rgba(0,0,0,0);
