@@ -4,6 +4,17 @@
   left: 0;
   z-index: 1030;
   transition: all .5s ease;
+  background-color: $gray-100;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+
+.navbar-brand img {
+	height: 3rem;
+}
+
+.navbar-toggler {
+	color: $gray-100;
 }
 
 .reg-link {
@@ -21,5 +32,9 @@
 
 	.reg-link {
 	  display: inline-block; 
+	}
+
+	.navbar-brand {
+		margin-left: 7rem;
 	}
 }
