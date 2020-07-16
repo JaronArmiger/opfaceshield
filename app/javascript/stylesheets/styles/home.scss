@@ -9,6 +9,7 @@
 
 .print-header {
 	text-align: center;
+	color: $main-color;
 }
 
 .print-links {
@@ -20,7 +21,7 @@
 }
 
 .print-links a {
-	background-color: $main-color;
+	background-color: $secondary-color;
 	margin-top: .5rem;
 	padding: 1rem;
 	max-width: 10rem;

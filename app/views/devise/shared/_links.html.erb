@@ -2,7 +2,7 @@
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
       <% if provider == :google_oauth2 %>
-        <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-primary" do %>
+        <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn google" do %>
         <span class="google"><%= render 'shared/google_logo' %> Continue With Google</span>
         <% end %>
       <% else %>

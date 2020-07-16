@@ -1,3 +1,4 @@
+<div class="main-wrapper">
 <h1 class="page-title">Account Information</h1>
 
 <%= form_with(model: @account, local: true) do |f| %>
@@ -52,6 +53,8 @@
   	 </div>
   	<% end %>
   </div>
-  
-  <%= f.submit "Save", class: "btn btn-secondary" %>
+  <div class="form-group d-flex justify-content-center">
+    <%= f.submit "Save", class: "btn btn-secondary" %>
+  </div>
 <% end %>
+</div>

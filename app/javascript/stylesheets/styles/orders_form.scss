@@ -2,9 +2,25 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-top: 0;
+	border-radius: none!important;
 }
 
+.address-group {
+	border-radius: 0;
+}
 
+.form-group input {
+    border: $border;
+	border-color: $dark-blue;
+	border-radius: $border-radius;
+}
+
+.form-group textarea {
+    border: $border;
+	border-color: $dark-blue;
+	border-radius: $border-radius;
+}
 
 #new-address-div {
 	transition: all 2s ease;

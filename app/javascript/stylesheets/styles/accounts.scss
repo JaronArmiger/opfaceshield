@@ -1,6 +1,7 @@
 .list-group-item {
 	border-left: 0;
 	border-right: 0;
+	border-bottom: 2px solid $main-color;
 }
 
 .account-info span {
@@ -9,6 +10,7 @@
 
 .info-group {
 	display: flex;
+	justify-content: space-between;
 }
 
 .info {
@@ -39,12 +41,13 @@
 }
 
 .buttons i {
-  color: var(--dark);
+  color: $secondary-color;
   font-size: 1.5rem;
 }
 
 .account-info .no-bold {
 	font-weight: 400;
+	color: $dark-blue;
 }
 
 .suggestion {

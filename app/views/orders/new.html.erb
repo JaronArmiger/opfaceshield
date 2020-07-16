@@ -1,3 +1,4 @@
+<div class="main-wrapper">
 <h1 class="page-title">Place Order</h1>
 <%= form_with(model: @order, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
@@ -62,5 +63,8 @@
 	      <%= f.text_field :zipcode, class: "form-control" %>
 	   </div>
    </div>
-  <%= f.submit "Place Order" %>
+  <div class="form-group d-flex justify-content-center">
+    <%= f.submit "Place Order" %>
+  </div>
 <% end %>
+</div>
