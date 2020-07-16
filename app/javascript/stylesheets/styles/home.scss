@@ -15,6 +15,7 @@
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+	margin-bottom: 2rem;
 }
 
 .print-links a {
@@ -29,4 +30,25 @@
 	&:hover {
 		text-decoration: none;
 	}
+}
+
+@include media-breakpoint-up(lg) {
+	.print-col {
+		//position: relative;
+	}
+	.print-wrapper {
+		position: fixed;
+		left: 0;
+		width: 100%;
+	}
+
+	.print-links {
+  	  flex-direction: column;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+  .print-links {
+  	flex-direction: column;
+  }
 }

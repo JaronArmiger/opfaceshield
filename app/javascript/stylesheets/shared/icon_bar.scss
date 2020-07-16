@@ -13,3 +13,12 @@
 .icon-bar a {
 	color: white;
 }
+
+
+
+@include media-breakpoint-up(lg) {
+  .icon-bar {
+	display: none;
+  }
+
+}

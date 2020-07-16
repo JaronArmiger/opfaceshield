@@ -6,12 +6,20 @@
   transition: all .5s ease;
 }
 
+.reg-link {
+	display: none;
+}
+
 .navbar-toggler {
 	border: 0!important;
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(md) {
 	.navbar-collapse {
 		justify-content: flex-end;
+	}
+
+	.reg-link {
+	  display: inline-block; 
 	}
 }
