@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("material-design-icons-iconfont")
+require.context("../images",true)
 
 import './bootstrap_custom.js'
 import '../stylesheets/application'
