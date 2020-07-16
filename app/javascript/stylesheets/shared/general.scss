@@ -47,6 +47,9 @@ a {
 	color: $dark-blue!important;
 }
 
+.red {
+	color: $secondary-color!important;
+}
 
 .page-title {
 	text-align: center;
@@ -54,6 +57,21 @@ a {
 
 .row {
 	margin: 0;
+}
+
+.card {
+	margin: .5rem 0;
+	border: 0;
+}
+
+.card .card-header {
+	color: white;
+	background-color: $main-color;
+	border: 0;
+}
+
+.list-group-item {
+	margin: .5rem;
 }
 
 .alert {
@@ -73,21 +91,9 @@ a {
 	}
 }
 
-
-
-.card {
-	margin: .5rem 0;
-	border: 0;
-}
-
-.card .card-header {
-	color: white;
-	background-color: $main-color;
-	border: 0;
-}
-
-.list-group-item {
-	margin: .5rem;
+.alert-success {
+	background-color: $main-transparent;
+	color: $dark-blue;
 }
 
 .alert-alert {

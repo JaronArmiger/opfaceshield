@@ -2,7 +2,7 @@
 <div class="post">
   <%= image_tag post.image, class: "card-img" if post.image.attached? %>
   <div class="post-content">
-  	<span><%= @account.institution_name %></span>
+  	<span class="post-user"><%= @account.institution_name %></span>
   	<p><%= post.content %></p>
   </div>
   <% if current_user && (belongs_to_me?(post,current_user) || current_user.admin?) %>

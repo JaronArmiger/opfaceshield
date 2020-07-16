@@ -19,6 +19,9 @@
         <li class="nav-item reg-link">
           <%= link_to "Place Order", new_order_path, class: "nav-link dark-blue" %>
         </li>
+        <li class="nav-item">
+            <%= link_to "Write Post", new_post_path, class: "nav-link" %>
+        </li>
          <% if current_user_account %>
            <% if current_user_account.orders.any? %>
              <li class="nav-item reg-link">
@@ -39,20 +42,17 @@
            </li>
          <% end %>
          <li class="nav-item">
-           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav-link red" %>
          </li>
       <% elsif user_signed_in? && current_user.admin? %>
         <li class="nav-item admin-link">
              <%= link_to "All Orders", admin_orders_path, class: "nav-link" %>
         </li>
-        <li class="nav-item admin-link">
-             <%= link_to "Unprocessed", unprocessed_admin_orders_path, class: "nav-link " %>
-        </li>
-        <li class="nav-item admin-link">
-             <%= link_to "Processed", processed_admin_orders_path, class: "nav-link" %>
+        <li class="nav-item">
+            <%= link_to "Write Post", new_post_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav-link red" %>
          </li>
       <% else %>
         <li class="nav-item">
