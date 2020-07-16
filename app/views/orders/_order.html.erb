@@ -26,8 +26,10 @@
 			<span><b>Zip Code:</b> <%= order.zipcode %></span>
 		</div>
 		<div class="buttons">
-		  <%= link_to order_path(order), class: "cancel-order",data: { confirm: "Are you sure you'd like to cancel your order?"}, method: :delete do %>
-			Cancel Order
+		  <% unless order.processed? %>
+		    <%= link_to order_path(order), class: "cancel-order",data: { confirm: "Are you sure you'd like to cancel your order?"}, method: :delete do %>
+			  Cancel Order
+		    <% end %>
 		  <% end %>
 		</div>
 	</li>
