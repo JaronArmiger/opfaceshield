@@ -60,19 +60,24 @@ input[type="file"] {
 	position: relative;
 }
 
+::placeholder {
+	color: $dark-blue!important;
+}
+
 .text-input {
 	border: 1px solid $gray-200;
+	color: $dark-blue!important;
 	min-height: 10rem;
 	background-color: rgba(255,255,255,0);
 	font-size: 17px;
 	font-weight: 700;
+	&:focus {
+	  outline: none;
+	  background-color: rgba(255,255,255,0);
+	  border: 0;
+    }
 }
 
-.text-input:focus {
-	outline: none;
-	background-color: rgba(255,255,255,0);
-	border: 0;
-}
 
 #x-button {
 	width: 2.5rem;

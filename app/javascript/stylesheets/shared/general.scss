@@ -12,6 +12,7 @@ $border-radius: .7rem;
 
 body {
 	color: $dark-blue;
+	background-color: $main-transparent;
 }
 
 
@@ -21,9 +22,9 @@ form label {
 }
 
 h1,h2,h3,h4,h5 {
-	//font-family: 'Work Sans', sans-serif;
-	font-weight: 700;
-	color: $secondary-color;
+  //font-family: 'Volkhov', serif;
+  //font-weight: 700;
+  color: $secondary-color;
 }
 
 a {
@@ -41,6 +42,11 @@ a {
 	align-items: stretch;
 	max-width: 35rem;
 	margin: auto;
+}
+
+.desktop-links {
+  transform: rotateX(90deg);
+  max-height: 0;
 }
 
 .dark-blue {
@@ -117,7 +123,7 @@ a {
 }
 
 .dummy {
-	height: 6rem;
+	height: 4rem;
 }
 
 .hide {
@@ -260,5 +266,15 @@ input[type="submit"] {
 @include media-breakpoint-up(md) {
 	.dummy {
 		height: 7rem;
+	}
+	
+	.mobile-links {
+		transform: rotateX(90deg);
+		max-height: 0;
+	}
+
+	.desktop-links {
+		transform: rotateX(0);
+		max-height: 50rem;
 	}
 }
