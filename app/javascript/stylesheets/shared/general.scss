@@ -1,4 +1,6 @@
 $main-color: rgb(131,208,245);
+$secondary-color: rgb(227,6,19);
+$dark-blue: #003482;
 $dat-grey: rgba(0,0,0,0.7);
 $border: 2px solid $dat-grey;
 $border-radius: .7rem;
@@ -7,13 +9,29 @@ $border-radius: .7rem;
 	box-sizing: border-box;
 }
 
+body {
+	color: $dark-blue;
+}
+
+
 form label {
 	font-weight: 700;
+	color: $dark-blue;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 1000;
+	color: $main-color;
 }
 
 .container {
 	padding: 0 .3rem;
 	box-sizing: border-box;
+}
+
+.dark-blue {
+	color: $dark-blue!important;
 }
 
 
