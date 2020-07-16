@@ -1,5 +1,5 @@
 $main-color: rgb(131,208,245);
-$main-transparent: rgba(131,208,245,0.3);
+$main-transparent: rgba(131,208,245,0.45);
 $secondary-color: rgb(227,6,19);
 $dark-blue: #003482;
 $dat-grey: rgba(0,0,0,0.7);
@@ -21,7 +21,7 @@ form label {
 }
 
 h1,h2,h3,h4,h5 {
-	font-family: 'Work Sans', sans-serif;
+	//font-family: 'Work Sans', sans-serif;
 	font-weight: 1000;
 	color: $secondary-color;
 }
@@ -84,7 +84,7 @@ a {
 	text-align: center;
 	font-weight: 700;
 	border:0;
-	font-family: 'Work Sans', sans-serif;
+	//font-family: 'Work Sans', sans-serif;
 }
 
 .alert a {

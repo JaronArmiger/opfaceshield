@@ -8,7 +8,8 @@ class OrdersController < ApplicationController
 		if current_user.admin?
 			@orders = Order.order('created_at DESC')
 		else
-			@orders = current_user_account.orders
+			@processed_orders = current_user_account.orders.where("processed = true")
+			@unprocessed_orders = current_user_account.orders.where("processed = false")
 		end
 	end
 
