@@ -36,7 +36,7 @@
 	}
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(xl) {
 	.print-col {
 		//position: relative;
 	}
@@ -44,16 +44,10 @@
 		position: fixed;
 		top: 8rem;
 		left: 4rem;
-		width: 10rem;
+		width: 15rem;
 	}
 
 	.print-links {
   	  flex-direction: column;
     }
-}
-
-@include media-breakpoint-up(xl) {
-  .print-links {
-  	flex-direction: column;
-  }
 }

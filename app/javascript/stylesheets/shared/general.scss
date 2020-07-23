@@ -263,11 +263,27 @@ input[type="submit"] {
 	margin-top: .3rem;
 }
 
+.footer {
+	display: none
+}
+
 @include media-breakpoint-up(md) {
 	.dummy {
 		height: 7rem;
 	}
-	
+
+	.footer {
+		display: block;
+		height: 4rem;
+		border: 2px solid $dark-blue;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+@include media-breakpoint-up(xl) {
 	.mobile-links {
 		transform: rotateX(90deg);
 		max-height: 0;

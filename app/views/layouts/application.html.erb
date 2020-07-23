@@ -13,7 +13,7 @@
           <% end %>
         <% end %>
         <%= yield %>
-        <div class="dummy"></div>
+        <div class="dummy bottom"></div>
     </div>
     <% if current_user && current_user.admin? %>
       <%= render 'layouts/admin_icon_bar' %>
@@ -22,5 +22,6 @@
         <%= render 'layouts/icon_bar' %>
       <% end %>
     <% end %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
