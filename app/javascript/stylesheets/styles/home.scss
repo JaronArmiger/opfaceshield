@@ -36,6 +36,7 @@
 	}
 }
 
+
 @include media-breakpoint-up(xl) {
 	.print-col {
 		//position: relative;
@@ -51,3 +52,5 @@
   	  flex-direction: column;
     }
 }
+
+

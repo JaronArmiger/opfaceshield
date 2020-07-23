@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
 	before_action :has_address?
 	before_action :my_order?, only: [:show, :destroy]
 	before_action :order_processed?, only: [:destroy]
+	before_action :is_admin?
 
 	def index
 		if current_user.admin?
@@ -89,6 +90,12 @@ class OrdersController < ApplicationController
 	  	  					You can email our administrator at #{administrator.email} and
 	  	  					we can try to work towards a solution."
 	  	  redirect_to root_url if @order.processed?
+	  	end
+	  end
+
+	  def is_admin?
+	  	if current_user.admin?
+	  	 redirect_to admin_orders_path
 	  	end
 	  end
 end

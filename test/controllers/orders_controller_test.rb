@@ -3,11 +3,11 @@ require 'test_helper'
 class OrdersControllerTest < ActionDispatch::IntegrationTest
   def setup
   	@first_user = users(:alfonso)
-  	@first_user.confirm
+  	#@first_user.confirm
   	@second_user = users(:ozuna)
-  	@second_user.confirm
+  	#@second_user.confirm
   	@admin = users(:admin)
-  	@admin.confirm
+  	#@admin.confirm
   end
 
   test "no views should be accessible if no user signed in" do
@@ -33,14 +33,14 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   	assert_select 'span', text: other_order.street_address, count: 0
   end
   
-  test "index should contain all orders if user is admin" do
+  test "admin should be redirected to admin_orders_path" do
   	assert @admin.admin?
   	sign_in @admin
   	get orders_path
-  	assert_response :success
-  	orders.each do |order|
-  	  assert_match order.street_address, response.body
-  	end
+  	assert_redirected_to admin_orders_path
+  	#orders.each do |order|
+  	  #assert_match order.street_address, response.body
+  	#end
   end
 
   test "should redirect from show if order belongs to other user" do
@@ -82,14 +82,14 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should successfully destroy if user signed in and order not processed" do
-    ActionMailer::Base.deliveries.clear
+    #ActionMailer::Base.deliveries.clear
     sign_in @first_user
     unprocessed_order = @first_user.account.orders.first
     assert_not unprocessed_order.processed?
     assert_difference 'Order.count', -1 do
       delete order_path(unprocessed_order)
     end
-    assert_equal 2, ActionMailer::Base.deliveries.size
+    #assert_equal 2, ActionMailer::Base.deliveries.size
     assert_redirected_to root_path
   end
 end
