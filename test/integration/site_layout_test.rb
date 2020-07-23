@@ -39,6 +39,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   	assert_select 'a[href=?]', new_account_path, count: 0
   	assert_select 'a[href=?]', account_path(@account)
   	assert_select 'a[href=?]', new_order_path
+    assert_select 'a[href=?]', orders_path
+    assert_select 'a[href=?]', new_post_path
   	assert_select 'a[href=?]', destroy_user_session_path
   end
 
@@ -52,7 +54,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', new_order_path, count: 0
     assert_select 'a[href=?]', destroy_user_session_path
     assert_select 'a[href=?]', admin_orders_path
-    assert_select 'a[href=?]', processed_admin_orders_path
-    assert_select 'a[href=?]', unprocessed_admin_orders_path
+    assert_select 'a[href=?]', new_post_path
+    #assert_select 'a[href=?]', processed_admin_orders_path
+    #assert_select 'a[href=?]', unprocessed_admin_orders_path
   end
 end

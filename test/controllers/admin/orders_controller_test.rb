@@ -64,8 +64,6 @@ class Admin::OrdersControllerTest < ActionDispatch::IntegrationTest
 	test "admin should be able to access admin routes" do
 	  sign_in @admin
 	  order = orders(:one)
-	  get orders_path
-	  assert_response :success
 	  # index
 	  get admin_orders_path
 	  assert_response :success
