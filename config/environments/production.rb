@@ -70,8 +70,8 @@ Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
     :user_name => 'apikey',
-    :api_key => ENV["SENDGRID_API_KEY"],
-    :domain => 'https://fierce-beyond-46550.herokuapp.com',
+    :password => ENV["SENDGRID_API_KEY"],
+    :domain => 'http://www.operationfaceshieldchicago.com',
     :address => 'smtp.sendgrid.net',
     :port => 465,
     :authentication => :plain,
